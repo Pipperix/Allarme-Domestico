@@ -1,0 +1,74 @@
+{
+  "version": 1,
+  "author": "LEONARDO FORCONI",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-ir-receiver", "id": "ir1", "top": 113.88, "left": 283.68, "attrs": {} },
+    { "type": "wokwi-ir-remote", "id": "remote1", "top": -86.4, "left": 374.4, "attrs": {} },
+    {
+      "type": "wokwi-pir-motion-sensor",
+      "id": "pir1",
+      "top": -212.04,
+      "left": -46.62,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-pir-motion-sensor",
+      "id": "pir2",
+      "top": -207.7,
+      "left": 309.22,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-rgb-led",
+      "id": "rgb1",
+      "top": -101.6,
+      "left": 145.1,
+      "attrs": { "common": "cathode" }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": 243.99,
+      "left": 117.14,
+      "rotate": 180,
+      "attrs": { "volume": "0.1" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": -185.8,
+      "left": -124.8,
+      "attrs": { "color": "green", "bounce": "0" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn2",
+      "top": -176.2,
+      "left": 230.4,
+      "attrs": { "color": "green", "bounce": "0" }
+    }
+  ],
+  "connections": [
+    [ "ir1:DAT", "uno:2", "green", [ "v17.12", "h30.2", "v-222.66", "h-117.56" ] ],
+    [ "ir1:VCC", "uno:5V", "red", [ "v19.01", "h-153.89" ] ],
+    [ "ir1:GND", "uno:GND.2", "black", [ "v13.34", "h-132.95" ] ],
+    [ "pir1:GND", "uno:GND.1", "black", [ "v0" ] ],
+    [ "pir1:VCC", "uno:5V", "red", [ "v0" ] ],
+    [ "rgb1:COM", "uno:GND.1", "black", [ "v0" ] ],
+    [ "rgb1:G", "uno:8", "green", [ "v0" ] ],
+    [ "rgb1:R", "uno:9", "red", [ "v0" ] ],
+    [ "pir2:GND", "uno:GND.1", "black", [ "v0" ] ],
+    [ "pir2:VCC", "uno:5V", "red", [ "v0" ] ],
+    [ "pir1:OUT", "uno:12", "green", [ "v0" ] ],
+    [ "pir2:OUT", "uno:11", "green", [ "v0" ] ],
+    [ "uno:GND.2", "bz1:1", "black", [ "v0" ] ],
+    [ "uno:10", "bz1:2", "red", [ "v0" ] ],
+    [ "btn1:2.r", "uno:3", "green", [ "h0.2", "v125", "h288" ] ],
+    [ "btn2:2.r", "uno:3", "green", [ "h9.8", "v125", "h-67.2" ] ],
+    [ "btn1:1.l", "uno:GND.1", "black", [ "h-9.6", "v163.2", "h240" ] ],
+    [ "btn2:1.l", "uno:GND.1", "black", [ "h0" ] ]
+  ],
+  "dependencies": {}
+}
